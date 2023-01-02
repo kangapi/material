@@ -1,0 +1,1167 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guide to create a website with Hugo and hosting with Github Pages">
+      
+      
+        <meta name="author" content="Kangapi">
+      
+      
+      
+        <link rel="prev" href="../general/">
+      
+      
+        <link rel="next" href="../Minecraft-plugin-memo/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.0">
+    
+    
+      
+        <title>Hugo and Github Pages - kangapi</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f79797b0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#intro" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="kangapi" class="md-header__button md-logo" aria-label="kangapi" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            kangapi
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Hugo and Github Pages
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/kangapi/material" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    material
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../cybersecurity/Window/Basics/" class="md-tabs__link">
+        Cybersecurity
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Apps%20test%C3%A9s/" class="md-tabs__link md-tabs__link--active">
+        Memo
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="kangapi" class="md-nav__button md-logo" aria-label="kangapi" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    kangapi
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/kangapi/material" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    material
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Cybersecurity
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cybersecurity" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Cybersecurity
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Window
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Window" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Window
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cybersecurity/Window/Basics/" class="md-nav__link">
+        Basics
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Memo
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Memo" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Memo
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Apps%20test%C3%A9s/" class="md-nav__link">
+        Apps testés
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Keyboard%20shortcuts%20JetBrain/" class="md-nav__link">
+        Keyboard shortcuts JetBrain
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general/" class="md-nav__link">
+        General
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          Hugo and Github Pages
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Hugo and Github Pages" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Hugo and Github Pages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Hugo and Github Pages
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Hugo and Github Pages
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-github-repository" class="md-nav__link">
+    Create a Github repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminal" class="md-nav__link">
+    Terminal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#push-to-github" class="md-nav__link">
+    Push to Github
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continous-deployment" class="md-nav__link">
+    Continous Deployment
+  </a>
+  
+    <nav class="md-nav" aria-label="Continous Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-this-section-we-will-create-a-workflow-that-will-archieve-this-for-us-it-will-run-on-github-actions" class="md-nav__link">
+    In this section we will create a workflow that will archieve this for us. It will run on Github Actions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5">
+          Minecraft plugin memo
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Minecraft plugin memo" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Minecraft plugin memo
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Minecraft-plugin-memo/" class="md-nav__link">
+        Memo plugin minecraft
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-github-repository" class="md-nav__link">
+    Create a Github repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminal" class="md-nav__link">
+    Terminal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#push-to-github" class="md-nav__link">
+    Push to Github
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continous-deployment" class="md-nav__link">
+    Continous Deployment
+  </a>
+  
+    <nav class="md-nav" aria-label="Continous Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-this-section-we-will-create-a-workflow-that-will-archieve-this-for-us-it-will-run-on-github-actions" class="md-nav__link">
+    In this section we will create a workflow that will archieve this for us. It will run on Github Actions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+
+  <h1>Hugo and Github Pages</h1>
+
+<h2 id="intro">Intro</h2>
+<ul>
+<li><a href="https://gohugo.io">Hugo</a> is one of the most popular open-source static site generators.</li>
+<li><a href="https://pages.github.com">Github Pages</a> is a static site hosting service that takes HTML, CSS, and JavaScript files straight from a repository on GitHub, optionally runs the files through a build process, and publishes a website.</li>
+</ul>
+<hr />
+<h2 id="create-a-github-repository">Create a Github repository</h2>
+<ol>
+<li>Go on the page <a href="https://github.com/new">new repository</a> on Github.</li>
+<li>Enter the name of the repository.</li>
+<li>Select <strong>public</strong> and <strong>add a README file</strong>.</li>
+<li>Click on <strong>Create Repository</strong>.</li>
+<li>Copy the repository url.</li>
+</ol>
+<p><img alt="new-repo" src="images/new-repo.png" /></p>
+<h2 id="terminal">Terminal</h2>
+<ol>
+<li>Open the console.</li>
+<li>Change directory.
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>cd
+</code></pre></div></li>
+<li>Clone the repository
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git clone &lt;repository-url&gt;
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Cloning into &#39;repository-name&#39;...
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>remote: Enumerating objects: 3, done.
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>remote: Counting objects: 100% (3/3), done.
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Receiving objects: 100% (3/3), done.
+</code></pre></div></li>
+<li>Open the folder that has just been created <strong>in the console</strong>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cd &lt;repository-name&gt;
+</code></pre></div></li>
+<li>Go a new branch with the name <strong>setup-hugo</strong> for exemple.
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git checkout -b setup-hugo
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Switched to a new branch &#39;setup-hugo&#39;
+</code></pre></div></li>
+<li>Create an Hugo Website with yaml files
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>hugo new site . --force -f yaml
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Congratulations! Your new Hugo site is created in .....
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>Just a few more steps and you&#39;re ready to go:
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>1. Download a theme into the same-named folder.
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>Choose a theme from https://themes.gohugo.io/ or
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>create your own with the &quot;hugo new theme &lt;THEMENAME&gt;&quot; command.
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>2. Perhaps you want to add some content. You can add single files
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>with &quot;hugo new &lt;SECTIONNAME&gt;/&lt;FILENAME&gt;.&lt;FORMAT&gt;&quot;.
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>3. Start the built-in live server via &quot;hugo server&quot;.
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>Visit https://gohugo.io/ for quickstart guide and full documentation.
+</code></pre></div></li>
+<li>Add a theme in this tutoriel it's PaperMod
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod --depth=1
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Cloning into &#39;PaperMod/kangapi-docs-video/themes/PaperMod&#39;...
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>remote: Enumerating objects: 27650, done.
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>remote: Counting objects: 100% (203/203), done.
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>remote: Compressing objects: 100% (119/119), done.
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>remote: Total 27650 (delta 94), reused 152 (delta 62), pack-reused 27447
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>Receiving objects: 100% (27650/27650), 13.80 MiB | 17.23 MiB/s, done.
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>Resolving deltas: 100% (14557/14557), done.
+</code></pre></div>
+    Needed when you reclone your repo (submodules may not get cloned automatically)
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>git submodule update --init --recursive
+</code></pre></div></li>
+<li>Change <strong>config.yaml</strong> replace all to config to this code</li>
+<li>Don't forget to change the first line which is essential for proper functioning on Github Pages
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>baseURL: &quot;https://&lt;github-username&gt;.github.io/&lt;repository-name&gt;&quot;
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>title: ExampleSite
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>paginate: 5
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>theme: PaperMod
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>enableRobotsTXT: true
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>buildDrafts: false
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>buildFuture: false
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>buildExpired: false
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>googleAnalytics: UA-123-45
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>minify:
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>    disableXML: true
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>    minifyOutput: true
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>params:
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>    env: production # to enable google analytics, opengraph, twitter-cards and schema.
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>    title: ExampleSite
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>    description: &quot;ExampleSite description&quot;
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>    keywords: [Blog, Portfolio, PaperMod]
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>    author: Me
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>    # author: [&quot;Me&quot;, &quot;You&quot;] # multiple authors
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>    images: [&quot;&lt;link or path of image for opengraph, twitter-cards&gt;&quot;]
+<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>    DateFormat: &quot;January 2, 2006&quot;
+<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>    defaultTheme: auto # dark, light
+<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>    disableThemeToggle: false
+<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a>
+<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a>    ShowReadingTime: true
+<a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a>    ShowShareButtons: true
+<a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a>    ShowPostNavLinks: true
+<a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a>    ShowBreadCrumbs: true
+<a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a>    ShowCodeCopyButtons: false
+<a id="__codelineno-11-34" name="__codelineno-11-34" href="#__codelineno-11-34"></a>    disableSpecial1stPost: false
+<a id="__codelineno-11-35" name="__codelineno-11-35" href="#__codelineno-11-35"></a>    disableScrollToTop: false
+<a id="__codelineno-11-36" name="__codelineno-11-36" href="#__codelineno-11-36"></a>    comments: false
+<a id="__codelineno-11-37" name="__codelineno-11-37" href="#__codelineno-11-37"></a>    hidemeta: false
+<a id="__codelineno-11-38" name="__codelineno-11-38" href="#__codelineno-11-38"></a>    hideSummary: false
+<a id="__codelineno-11-39" name="__codelineno-11-39" href="#__codelineno-11-39"></a>    showtoc: false
+<a id="__codelineno-11-40" name="__codelineno-11-40" href="#__codelineno-11-40"></a>    tocopen: false
+<a id="__codelineno-11-41" name="__codelineno-11-41" href="#__codelineno-11-41"></a>
+<a id="__codelineno-11-42" name="__codelineno-11-42" href="#__codelineno-11-42"></a>    assets:
+<a id="__codelineno-11-43" name="__codelineno-11-43" href="#__codelineno-11-43"></a>        # disableHLJS: true # to disable highlight.js
+<a id="__codelineno-11-44" name="__codelineno-11-44" href="#__codelineno-11-44"></a>        # disableFingerprinting: true
+<a id="__codelineno-11-45" name="__codelineno-11-45" href="#__codelineno-11-45"></a>        favicon: &quot;&lt;link / abs url&gt;&quot;
+<a id="__codelineno-11-46" name="__codelineno-11-46" href="#__codelineno-11-46"></a>        favicon16x16: &quot;&lt;link / abs url&gt;&quot;
+<a id="__codelineno-11-47" name="__codelineno-11-47" href="#__codelineno-11-47"></a>        favicon32x32: &quot;&lt;link / abs url&gt;&quot;
+<a id="__codelineno-11-48" name="__codelineno-11-48" href="#__codelineno-11-48"></a>        apple_touch_icon: &quot;&lt;link / abs url&gt;&quot;
+<a id="__codelineno-11-49" name="__codelineno-11-49" href="#__codelineno-11-49"></a>        safari_pinned_tab: &quot;&lt;link / abs url&gt;&quot;
+<a id="__codelineno-11-50" name="__codelineno-11-50" href="#__codelineno-11-50"></a>
+<a id="__codelineno-11-51" name="__codelineno-11-51" href="#__codelineno-11-51"></a>    label:
+<a id="__codelineno-11-52" name="__codelineno-11-52" href="#__codelineno-11-52"></a>        text: &quot;Home&quot;
+<a id="__codelineno-11-53" name="__codelineno-11-53" href="#__codelineno-11-53"></a>        #icon: /apple-touch-icon.png
+<a id="__codelineno-11-54" name="__codelineno-11-54" href="#__codelineno-11-54"></a>        #iconHeight: 35
+<a id="__codelineno-11-55" name="__codelineno-11-55" href="#__codelineno-11-55"></a>
+<a id="__codelineno-11-56" name="__codelineno-11-56" href="#__codelineno-11-56"></a>    # profile-mode
+<a id="__codelineno-11-57" name="__codelineno-11-57" href="#__codelineno-11-57"></a>    profileMode:
+<a id="__codelineno-11-58" name="__codelineno-11-58" href="#__codelineno-11-58"></a>        enabled: false # needs to be explicitly set
+<a id="__codelineno-11-59" name="__codelineno-11-59" href="#__codelineno-11-59"></a>        title: ExampleSite
+<a id="__codelineno-11-60" name="__codelineno-11-60" href="#__codelineno-11-60"></a>        subtitle: &quot;This is subtitle&quot;
+<a id="__codelineno-11-61" name="__codelineno-11-61" href="#__codelineno-11-61"></a>        imageUrl: &quot;&lt;img location&gt;&quot;
+<a id="__codelineno-11-62" name="__codelineno-11-62" href="#__codelineno-11-62"></a>        imageWidth: 120
+<a id="__codelineno-11-63" name="__codelineno-11-63" href="#__codelineno-11-63"></a>        imageHeight: 120
+<a id="__codelineno-11-64" name="__codelineno-11-64" href="#__codelineno-11-64"></a>        imageTitle: my image
+<a id="__codelineno-11-65" name="__codelineno-11-65" href="#__codelineno-11-65"></a>        buttons:
+<a id="__codelineno-11-66" name="__codelineno-11-66" href="#__codelineno-11-66"></a>            - name: Posts
+<a id="__codelineno-11-67" name="__codelineno-11-67" href="#__codelineno-11-67"></a>              url: posts
+<a id="__codelineno-11-68" name="__codelineno-11-68" href="#__codelineno-11-68"></a>            - name: Tags
+<a id="__codelineno-11-69" name="__codelineno-11-69" href="#__codelineno-11-69"></a>              url: tags
+<a id="__codelineno-11-70" name="__codelineno-11-70" href="#__codelineno-11-70"></a>
+<a id="__codelineno-11-71" name="__codelineno-11-71" href="#__codelineno-11-71"></a>    # home-info mode
+<a id="__codelineno-11-72" name="__codelineno-11-72" href="#__codelineno-11-72"></a>    homeInfoParams:
+<a id="__codelineno-11-73" name="__codelineno-11-73" href="#__codelineno-11-73"></a>        Title: &quot;Hi there \U0001F44B&quot;
+<a id="__codelineno-11-74" name="__codelineno-11-74" href="#__codelineno-11-74"></a>        Content: Welcome to my blog
+<a id="__codelineno-11-75" name="__codelineno-11-75" href="#__codelineno-11-75"></a>
+<a id="__codelineno-11-76" name="__codelineno-11-76" href="#__codelineno-11-76"></a>    socialIcons:
+<a id="__codelineno-11-77" name="__codelineno-11-77" href="#__codelineno-11-77"></a>        - name: twitter
+<a id="__codelineno-11-78" name="__codelineno-11-78" href="#__codelineno-11-78"></a>          url: &quot;https://twitter.com/&quot;
+<a id="__codelineno-11-79" name="__codelineno-11-79" href="#__codelineno-11-79"></a>        - name: stackoverflow
+<a id="__codelineno-11-80" name="__codelineno-11-80" href="#__codelineno-11-80"></a>          url: &quot;https://stackoverflow.com&quot;
+<a id="__codelineno-11-81" name="__codelineno-11-81" href="#__codelineno-11-81"></a>        - name: github
+<a id="__codelineno-11-82" name="__codelineno-11-82" href="#__codelineno-11-82"></a>          url: &quot;https://github.com/&quot;
+<a id="__codelineno-11-83" name="__codelineno-11-83" href="#__codelineno-11-83"></a>
+<a id="__codelineno-11-84" name="__codelineno-11-84" href="#__codelineno-11-84"></a>    analytics:
+<a id="__codelineno-11-85" name="__codelineno-11-85" href="#__codelineno-11-85"></a>        google:
+<a id="__codelineno-11-86" name="__codelineno-11-86" href="#__codelineno-11-86"></a>            SiteVerificationTag: &quot;XYZabc&quot;
+<a id="__codelineno-11-87" name="__codelineno-11-87" href="#__codelineno-11-87"></a>        bing:
+<a id="__codelineno-11-88" name="__codelineno-11-88" href="#__codelineno-11-88"></a>            SiteVerificationTag: &quot;XYZabc&quot;
+<a id="__codelineno-11-89" name="__codelineno-11-89" href="#__codelineno-11-89"></a>        yandex:
+<a id="__codelineno-11-90" name="__codelineno-11-90" href="#__codelineno-11-90"></a>            SiteVerificationTag: &quot;XYZabc&quot;
+<a id="__codelineno-11-91" name="__codelineno-11-91" href="#__codelineno-11-91"></a>
+<a id="__codelineno-11-92" name="__codelineno-11-92" href="#__codelineno-11-92"></a>    cover:
+<a id="__codelineno-11-93" name="__codelineno-11-93" href="#__codelineno-11-93"></a>        hidden: true # hide everywhere but not in structured data
+<a id="__codelineno-11-94" name="__codelineno-11-94" href="#__codelineno-11-94"></a>        hiddenInList: true # hide on list pages and home
+<a id="__codelineno-11-95" name="__codelineno-11-95" href="#__codelineno-11-95"></a>        hiddenInSingle: true # hide on single page
+<a id="__codelineno-11-96" name="__codelineno-11-96" href="#__codelineno-11-96"></a>
+<a id="__codelineno-11-97" name="__codelineno-11-97" href="#__codelineno-11-97"></a>    editPost:
+<a id="__codelineno-11-98" name="__codelineno-11-98" href="#__codelineno-11-98"></a>        URL: &quot;https://github.com/&lt;path_to_repo&gt;/content&quot;
+<a id="__codelineno-11-99" name="__codelineno-11-99" href="#__codelineno-11-99"></a>        Text: &quot;Suggest Changes&quot; # edit text
+<a id="__codelineno-11-100" name="__codelineno-11-100" href="#__codelineno-11-100"></a>        appendFilePath: true # to append file path to Edit link
+<a id="__codelineno-11-101" name="__codelineno-11-101" href="#__codelineno-11-101"></a>
+<a id="__codelineno-11-102" name="__codelineno-11-102" href="#__codelineno-11-102"></a>    # for search
+<a id="__codelineno-11-103" name="__codelineno-11-103" href="#__codelineno-11-103"></a>    # https://fusejs.io/api/options.html
+<a id="__codelineno-11-104" name="__codelineno-11-104" href="#__codelineno-11-104"></a>    fuseOpts:
+<a id="__codelineno-11-105" name="__codelineno-11-105" href="#__codelineno-11-105"></a>        isCaseSensitive: false
+<a id="__codelineno-11-106" name="__codelineno-11-106" href="#__codelineno-11-106"></a>        shouldSort: true
+<a id="__codelineno-11-107" name="__codelineno-11-107" href="#__codelineno-11-107"></a>        location: 0
+<a id="__codelineno-11-108" name="__codelineno-11-108" href="#__codelineno-11-108"></a>        distance: 1000
+<a id="__codelineno-11-109" name="__codelineno-11-109" href="#__codelineno-11-109"></a>        threshold: 0.4
+<a id="__codelineno-11-110" name="__codelineno-11-110" href="#__codelineno-11-110"></a>        minMatchCharLength: 0
+<a id="__codelineno-11-111" name="__codelineno-11-111" href="#__codelineno-11-111"></a>        keys: [&quot;title&quot;, &quot;permalink&quot;, &quot;summary&quot;, &quot;content&quot;]
+<a id="__codelineno-11-112" name="__codelineno-11-112" href="#__codelineno-11-112"></a>menu:
+<a id="__codelineno-11-113" name="__codelineno-11-113" href="#__codelineno-11-113"></a>    main:
+<a id="__codelineno-11-114" name="__codelineno-11-114" href="#__codelineno-11-114"></a>        - identifier: categories
+<a id="__codelineno-11-115" name="__codelineno-11-115" href="#__codelineno-11-115"></a>          name: categories
+<a id="__codelineno-11-116" name="__codelineno-11-116" href="#__codelineno-11-116"></a>          url: /categories/
+<a id="__codelineno-11-117" name="__codelineno-11-117" href="#__codelineno-11-117"></a>          weight: 10
+<a id="__codelineno-11-118" name="__codelineno-11-118" href="#__codelineno-11-118"></a>        - identifier: tags
+<a id="__codelineno-11-119" name="__codelineno-11-119" href="#__codelineno-11-119"></a>          name: tags
+<a id="__codelineno-11-120" name="__codelineno-11-120" href="#__codelineno-11-120"></a>          url: /tags/
+<a id="__codelineno-11-121" name="__codelineno-11-121" href="#__codelineno-11-121"></a>          weight: 20
+<a id="__codelineno-11-122" name="__codelineno-11-122" href="#__codelineno-11-122"></a>        - identifier: example
+<a id="__codelineno-11-123" name="__codelineno-11-123" href="#__codelineno-11-123"></a>          name: example.org
+<a id="__codelineno-11-124" name="__codelineno-11-124" href="#__codelineno-11-124"></a>          url: https://example.org
+<a id="__codelineno-11-125" name="__codelineno-11-125" href="#__codelineno-11-125"></a>          weight: 30
+<a id="__codelineno-11-126" name="__codelineno-11-126" href="#__codelineno-11-126"></a># Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+<a id="__codelineno-11-127" name="__codelineno-11-127" href="#__codelineno-11-127"></a># pygmentsUseClasses: true
+<a id="__codelineno-11-128" name="__codelineno-11-128" href="#__codelineno-11-128"></a># markup:
+<a id="__codelineno-11-129" name="__codelineno-11-129" href="#__codelineno-11-129"></a>#     highlight:
+<a id="__codelineno-11-130" name="__codelineno-11-130" href="#__codelineno-11-130"></a>#         # anchorLineNos: true
+<a id="__codelineno-11-131" name="__codelineno-11-131" href="#__codelineno-11-131"></a>#         codeFences: true
+<a id="__codelineno-11-132" name="__codelineno-11-132" href="#__codelineno-11-132"></a>#         guessSyntax: true
+<a id="__codelineno-11-133" name="__codelineno-11-133" href="#__codelineno-11-133"></a>#         lineNos: true
+<a id="__codelineno-11-134" name="__codelineno-11-134" href="#__codelineno-11-134"></a>#         style: monokai
+</code></pre></div></li>
+<li>Check your site builds by running the below command in your terminal, and then visiting <code>http://localhost:1313/&lt;repository-name&gt;/</code>.</li>
+</ol>
+<h2 id="push-to-github">Push to Github</h2>
+<ol>
+<li>Add all files
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>git add .
+</code></pre></div></li>
+<li>Commit the current state of our files with a commit description
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>git commit -m &quot;Commit descpription&quot;
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>[setup-hugo 6da6dff] Commit description
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>5 files changed, 144 insertions(+)
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>create mode 100644 .gitmodules
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>create mode 100644 .hugo_build.lock
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>create mode 100644 archetypes/default.md
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>create mode 100644 config.yaml
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>create mode 160000 themes/PaperMod
+</code></pre></div></li>
+<li>Now push our local commit up to the Github server with <code>git push</code>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>git push origin setup-hugo
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Enumerating objects: 9, done.
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>Counting objects: 100% (9/9), done.
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>Delta compression using up to 8 threads
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>Compressing objects: 100% (5/5), done.
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>Writing objects: 100% (8/8), 2.11 KiB | 2.11 MiB/s, done.
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>Total 8 (delta 0), reused 0 (delta 0), pack-reused 0
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>remote: 
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>remote: Create a pull request for &#39;setup-hugo&#39; on GitHub by visiting:
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>remote:      https://github.com/&lt;github-username&gt;/&lt;github-repository-name&gt;/pull/new/setup-hugo
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>remote: 
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>To https://github.com/&lt;github-username&gt;/&lt;github-repository-name&gt;.git
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>* [new branch]      setup-hugo -&gt; setup-hugo
+</code></pre></div></li>
+<li>
+<p>If we head back onto Github to our repo's page, we should now see a banner informing us that a branch has been updated and providing us with an option to <strong>Compare &amp;pull request</strong>. Click that big green button !</p>
+<p><img alt="compare-setup-hugo
+" src="images/compare-setup-hugo.png" />
+  * <strong>Click on the green button that has just appeared</strong>
+  <img alt="create-pull-request" src="images/create-pull-request.png" />
+  * <strong>Click on the new button</strong>
+  <img alt="merge-pull-request" src="images/merge-pull-request.png" />
+  * <strong>check if your commit was successfully merged. If so, there should be a purple merged button</strong>
+  <img alt="merged" src="images/merged.png" /></p>
+</li>
+<li>
+<p>In your terminal, run the following:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>git checkout main # Switch back to the main branch
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>Switched to branch &#39;main&#39;
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>Your branch is up to date with &#39;origin/main&#39;.
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>git pull # Pull the changes to the main branch down from Github
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>remote: Enumerating objects: 1, done.
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>remote: Counting objects: 100% (1/1), done.
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>Unpacking objects: 100% (1/1), 623 bytes | 623.00 KiB/s, done.
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>From https://github.com/&lt;github-username&gt;/&lt;github-repository-name&gt;
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>8de614a..c986a64  main       -&gt; origin/main
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>Updating 8de614a..c986a64
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>Fast-forward
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>.gitmodules           |   3 ++
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>.hugo_build.lock      |   0
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>archetypes/default.md |   6 +++
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>config.yaml           | 134 ++++++++++++++++++++++++++++++++++++++++++++++++++
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>themes/PaperMod       |   1 +
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>5 files changed, 144 insertions(+)
+<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>create mode 100644 .gitmodules
+<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>create mode 100644 .hugo_build.lock
+<a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>create mode 100644 archetypes/default.md
+<a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a>create mode 100644 config.yaml
+<a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a>create mode 160000 themes/PaperMod
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="continous-deployment">Continous Deployment</h2>
+<h4 id="in-this-section-we-will-create-a-workflow-that-will-archieve-this-for-us-it-will-run-on-github-actions">In this section we will create a workflow that will archieve this for us. It will run on Github Actions</h4>
+<ol>
+<li>Let's start by cheking out a new branch in our local repo
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>git checkout -b add-cd
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>Switched to a new branch &#39;add-cd&#39;
+</code></pre></div></li>
+<li>Github Actions are automatically triggered by files that are stored in a special folder called <code>.github/workflows</code>. So lets create that folder !
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>mkdir -p .github/workflows
+</code></pre></div></li>
+<li>Create a <code>cd.yml</code>(<code>cd</code> is short for <strong>C</strong>ontinous <strong>D</strong>eployment) file inside the <code>.github/workflows</code>.
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>touch .github/workflows/cd.yml
+</code></pre></div></li>
+<li>
+<p>Open the <code>cd.yml</code> in favorite text editor.</p>
+</li>
+<li>
+<p>Copy and paste into your file.
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>name: Build and Deploy Site
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>on:
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>  push:
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>    branches:
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>      - main  # Set a branch to deploy
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>  pull_request:
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>    branches:
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>      - main
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>
+<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>jobs:
+<a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>  build-and-deploy-site:
+<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a>    runs-on: ubuntu-latest
+<a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a>    steps:
+<a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a>      - name: Checkout repo
+<a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a>        uses: actions/checkout@v2
+<a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a>        with:
+<a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a>          submodules: true  # Fetch Hugo themes (true OR recursive)
+<a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a>          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+<a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a>
+<a id="__codelineno-25-21" name="__codelineno-25-21" href="#__codelineno-25-21"></a>      - name: Setup Hugo
+<a id="__codelineno-25-22" name="__codelineno-25-22" href="#__codelineno-25-22"></a>        uses: peaceiris/actions-hugo@v2
+<a id="__codelineno-25-23" name="__codelineno-25-23" href="#__codelineno-25-23"></a>        with:
+<a id="__codelineno-25-24" name="__codelineno-25-24" href="#__codelineno-25-24"></a>          hugo-version: &#39;latest&#39;
+<a id="__codelineno-25-25" name="__codelineno-25-25" href="#__codelineno-25-25"></a>          extended: true
+<a id="__codelineno-25-26" name="__codelineno-25-26" href="#__codelineno-25-26"></a>
+<a id="__codelineno-25-27" name="__codelineno-25-27" href="#__codelineno-25-27"></a>      - name: Build site with Hugo
+<a id="__codelineno-25-28" name="__codelineno-25-28" href="#__codelineno-25-28"></a>        run: hugo --minify
+<a id="__codelineno-25-29" name="__codelineno-25-29" href="#__codelineno-25-29"></a>
+<a id="__codelineno-25-30" name="__codelineno-25-30" href="#__codelineno-25-30"></a>      - name: Check HTML
+<a id="__codelineno-25-31" name="__codelineno-25-31" href="#__codelineno-25-31"></a>        uses: chabad360/htmlproofer@master
+<a id="__codelineno-25-32" name="__codelineno-25-32" href="#__codelineno-25-32"></a>        with:
+<a id="__codelineno-25-33" name="__codelineno-25-33" href="#__codelineno-25-33"></a>          directory: &quot;.public&quot; 
+<a id="__codelineno-25-34" name="__codelineno-25-34" href="#__codelineno-25-34"></a>          arguments: --only-4xx --check-favicon --check-html --assume-extension --empty-alt-ignore --disable-external
+<a id="__codelineno-25-35" name="__codelineno-25-35" href="#__codelineno-25-35"></a>        continue-on-error: true
+<a id="__codelineno-25-36" name="__codelineno-25-36" href="#__codelineno-25-36"></a>
+<a id="__codelineno-25-37" name="__codelineno-25-37" href="#__codelineno-25-37"></a>      - name: Deploy to Github Pages
+<a id="__codelineno-25-38" name="__codelineno-25-38" href="#__codelineno-25-38"></a>        if: github.event_name == &#39;push&#39; &amp;&amp;  github.ref == &#39;refs/heads/main&#39;
+<a id="__codelineno-25-39" name="__codelineno-25-39" href="#__codelineno-25-39"></a>        uses: peaceiris/actions-gh-pages@v3
+<a id="__codelineno-25-40" name="__codelineno-25-40" href="#__codelineno-25-40"></a>        with:
+<a id="__codelineno-25-41" name="__codelineno-25-41" href="#__codelineno-25-41"></a>          github_token: ${{ secrets.GITHUB_TOKEN }}
+<a id="__codelineno-25-42" name="__codelineno-25-42" href="#__codelineno-25-42"></a>          publish_dir: ./public
+</code></pre></div></p>
+</li>
+<li>Add commit and push the <code>cd.yml</code> file to github we did before.
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>git add .github/workflows/cd.yml
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>git commit -m &quot;Commit-description&quot;
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>git push origin add-cd
+</code></pre></div></li>
+<li>
+<p>Create a new pull request like the step 4 in <a href="#push-to-github">push-to-github</a>.
+      <img alt="compare-add-cd
+" src="images/compare-add-cd.png" /></p>
+<ul>
+<li><strong>Click on the green button that has just appeared</strong>
+  <img alt="create-pull-request" src="images/create-pull-request.png" /></li>
+<li><strong>Click on the new button</strong>
+  <img alt="action-finish" src="images/action-finish.png" /></li>
+<li><strong>check if your commit was successfully merged. If so, there should be a purple merged button</strong>
+  <img alt="merged" src="images/merged.png" /></li>
+<li>Go in the <strong>actions</strong> menu.</li>
+<li>Click on <strong>Build and Deploy Site</strong>.
+  <img alt="workflows" src="images/workflows.png" /></li>
+<li>You should see a <strong>yellow circle</strong>.
+  <img alt="build-start" src="images/build-start.png" /></li>
+<li>After less than a minute, you should see the circle in <strong>green</strong>.
+  <img alt="build-finish" src="images/build-finish.png" /></li>
+<li>Go in your repository settings in <strong>Branches</strong></li>
+<li>Click on <strong>Add rule</strong>
+  <img alt="branch" src="images/branch.png" /></li>
+<li>Enter a branch pattern name</li>
+<li>Click on <strong>Require status checks to pass before merging</strong></li>
+<li>Search <strong>build-and-deploy-site</strong> in the list.</li>
+<li>Click on <strong>Create</strong> !
+  <img alt="branche-rules" src="images/branche-rules.png" /></li>
+<li>Now go in <strong>Pages</strong></li>
+<li>Select the <strong>gh-pages</strong> branch</li>
+<li>Click on <strong>Save</strong>
+  <img alt="pages" src="images/pages.png" /></li>
+<li>You should see an amazing website !!!!!
+  <img alt="website" src="images/website.png" /></li>
+</ul>
+</li>
+<li>
+<p>You can finish with
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>git checkout main
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>git pull
+</code></pre></div></p>
+</li>
+<li>Exemple Page
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>---
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>title: &quot;My 1st post&quot;
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>date: 2020-09-15T11:30:03+00:00
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a># weight: 1
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a># aliases: [&quot;/first&quot;]
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>tags: [&quot;first&quot;]
+<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>author: &quot;Me&quot;
+<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a># author: [&quot;Me&quot;, &quot;You&quot;] # multiple authors
+<a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>showToc: true
+<a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a>TocOpen: false
+<a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a>draft: false
+<a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a>hidemeta: false
+<a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a>comments: false
+<a id="__codelineno-31-14" name="__codelineno-31-14" href="#__codelineno-31-14"></a>description: &quot;Desc Text.&quot;
+<a id="__codelineno-31-15" name="__codelineno-31-15" href="#__codelineno-31-15"></a>canonicalURL: &quot;https://canonical.url/to/page&quot;
+<a id="__codelineno-31-16" name="__codelineno-31-16" href="#__codelineno-31-16"></a>disableHLJS: true # to disable highlightjs
+<a id="__codelineno-31-17" name="__codelineno-31-17" href="#__codelineno-31-17"></a>disableShare: false
+<a id="__codelineno-31-18" name="__codelineno-31-18" href="#__codelineno-31-18"></a>disableHLJS: false
+<a id="__codelineno-31-19" name="__codelineno-31-19" href="#__codelineno-31-19"></a>hideSummary: false
+<a id="__codelineno-31-20" name="__codelineno-31-20" href="#__codelineno-31-20"></a>searchHidden: true
+<a id="__codelineno-31-21" name="__codelineno-31-21" href="#__codelineno-31-21"></a>ShowReadingTime: true
+<a id="__codelineno-31-22" name="__codelineno-31-22" href="#__codelineno-31-22"></a>ShowBreadCrumbs: true
+<a id="__codelineno-31-23" name="__codelineno-31-23" href="#__codelineno-31-23"></a>ShowPostNavLinks: true
+<a id="__codelineno-31-24" name="__codelineno-31-24" href="#__codelineno-31-24"></a>cover:
+<a id="__codelineno-31-25" name="__codelineno-31-25" href="#__codelineno-31-25"></a>    image: &quot;&lt;image path/url&gt;&quot; # image path/url
+<a id="__codelineno-31-26" name="__codelineno-31-26" href="#__codelineno-31-26"></a>    alt: &quot;&lt;alt text&gt;&quot; # alt text
+<a id="__codelineno-31-27" name="__codelineno-31-27" href="#__codelineno-31-27"></a>    caption: &quot;&lt;text&gt;&quot; # display caption under cover
+<a id="__codelineno-31-28" name="__codelineno-31-28" href="#__codelineno-31-28"></a>    relative: false # when using page bundles set this to true
+<a id="__codelineno-31-29" name="__codelineno-31-29" href="#__codelineno-31-29"></a>    hidden: true # only hide on current single page
+<a id="__codelineno-31-30" name="__codelineno-31-30" href="#__codelineno-31-30"></a>editPost:
+<a id="__codelineno-31-31" name="__codelineno-31-31" href="#__codelineno-31-31"></a>    URL: &quot;https://github.com/&lt;path_to_repo&gt;/content&quot;
+<a id="__codelineno-31-32" name="__codelineno-31-32" href="#__codelineno-31-32"></a>    Text: &quot;Suggest Changes&quot; # edit text
+<a id="__codelineno-31-33" name="__codelineno-31-33" href="#__codelineno-31-33"></a>    appendFilePath: true # to append file path to Edit link
+<a id="__codelineno-31-34" name="__codelineno-31-34" href="#__codelineno-31-34"></a>---
+</code></pre></div></li>
+</ol>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 2, 2023</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5cf534bf.min.js"></script>
+      
+    
+  </body>
+</html>
