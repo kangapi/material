@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "command",
+            "name": "serve",
+            "program": "mkdocs",
+            "args": ["serve"],
+        },
+
+    ]
+}

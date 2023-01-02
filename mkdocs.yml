@@ -1,4 +1,31 @@
-site_name: My Docs
+site_name: kangapi
+repo_url: https://github.com/kangapi/material
+repo_name: material
+extra_css:
+    - stylesheets/extra.css
+
 theme:
   name: material
-
+  icon:
+      repo: fontawesome/brands/github
+  features:
+    - navigation.instant
+    - navigation.tabs
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.keys
+plugins:
+  - git-revision-date-localized:
+      fallback_to_build_date: true
+  - git-authors
